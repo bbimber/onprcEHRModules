@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<etl xmlns="http://labkey.org/etl/xml">
+
+    <name>Covid19SchedulerAdminETL</name>
+
+    <description>This ETL Runs a series of Stored Procedures to Update the Covid 19 Admin List each day</description>
+
+
+    <transforms>
+
+        <transform id="ExtractDCMStaff" type="StoredProcedure">
+            <description>Runs Stored Procedure to Extract the Staff Members from Comments List</description>
+            <procedure schemaName="extscheduler" procedureName="cov19ScheduleProcessDCM">
+            </procedure>
+        </transform>
+
+        <transform id="InsertDCMStaff" type="StoredProcedure">
+            <description>Runs a stored procedure to insert DCM Staff appointments to Admin List.</description>
+            <procedure schemaName="extscheduler" procedureName="Covid19toList">
+            </procedure>
+        </transform>
+
+        <transform id="InsertResearchStaff" type="StoredProcedure">
+            <description>Runs a stored procedure Insert Research Staff appointments</description>
+            <procedure schemaName="extscheduler" procedureName="Covid19toListNonDCM">
+            </procedure>
+        </transform>
+    </transforms>
+    <schedule>
+
+        <poll interval="12h"/>
+
+    </schedule>-->
+
+
+</etl>
