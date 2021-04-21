@@ -1,5 +1,3 @@
-USE [Labkey_test]
-GO
 /****** Object:  StoredProcedure [extscheduler].[cov19ScheduleProcessDCM]    Script Date: 4/19/2021 10:53:19 AM ******/
 SET ANSI_NULLS ON
     GO
