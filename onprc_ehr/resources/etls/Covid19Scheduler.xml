@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<etl xmlns="http://labkey.org/etl/xml">
+
+    <name>Covid19Scheduler</name>
+
+    <description>This ETL Runs a stored procedure which pareses the Comments users to invidiual recordsr</description>
+
+
+    <transforms>
+
+    <transform id="UpdateDCMEvents" type="StoredProcedure">
+        <description>Parses the group schedule items to individual records</description>
+        <procedure schemaName="extscheduler" procedureName="cov19ScheduleProcessDCM">
+        </procedure>
+    </transform>
+    <transform id="Append Events to Events Table" type="StoredProcedure">
+        <description>Run a stored procedure that inserts the records into a List.</description>
+        <procedure schemaName="extscheduler" procedureName="Covid19_insertDCMtoPrime">
+        </procedure>
+    </transform>
+
+    <!--	<schedule>
+
+            <poll interval="12h"/>
+
+        </schedule>-->
+
+
+</etl>
