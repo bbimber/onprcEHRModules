@@ -44,7 +44,7 @@
                     </column>column>
                     <column columnName="ReasonForMove">
                         <columnTitle>Reason For Move</columnTitle>
-                    </column>column>
+                    </column>
                     <column columnName="Remark"/>
 
                     <column columnName="TotalAnimals">
